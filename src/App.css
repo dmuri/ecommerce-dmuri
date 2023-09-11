@@ -203,7 +203,7 @@ body {
   }
 }
 
-#big-image-slider {
+.big-image-slider {
   display: flex;
   transition: transform 0.2s ease-in-out;
 }
