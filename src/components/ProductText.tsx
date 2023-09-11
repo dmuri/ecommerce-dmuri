@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-const ProductText = () => {
+interface ProductTextProps {
+  onAddToCartClick: (amount: number) => void;
+}
+
+const ProductText: React.FC<ProductTextProps> = ({ onAddToCartClick }) => {
   const [amount, setAmount] = useState(0);
   const handleIncrement = () => {
     setAmount((prevState) => prevState + 1);
@@ -34,7 +38,13 @@ const ProductText = () => {
           </button>
         </div>
         <div className="add-to-basket__button-wrapper">
-          <button className="add-to-basket__button">
+          <button
+            onClick={() => {
+              onAddToCartClick(amount);
+              setAmount(0);
+            }}
+            className="add-to-basket__button"
+          >
             <div className="svg-wrapper">
               <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                 <path

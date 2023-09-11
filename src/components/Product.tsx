@@ -1,11 +1,15 @@
 import ProductGallery from "./ProductGallery.tsx";
 import ProductText from "./ProductText.tsx";
 
-const Product = () => {
+interface ProductProps {
+  onAddToCartClick: (amount: number) => void;
+}
+
+const Product: React.FC<ProductProps> = ({ onAddToCartClick }) => {
   return (
     <main className="product-grid-container">
       <ProductGallery />
-      <ProductText />
+      <ProductText onAddToCartClick={onAddToCartClick} />
     </main>
   );
 };

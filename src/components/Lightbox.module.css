@@ -28,6 +28,43 @@
   position: relative;
 }
 
+.lbimageslider::before,
+.lbimageslider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.lbimageslider::before:hover path,
+.lbimageslider::after:hover path {
+  fill: var(--clr-orange);
+}
+
+.lbimageslider::before {
+  background-image: url("/public/images/icon-previous.svg");
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 20px;
+}
+
+.lbimageslider::after {
+  background-image: url("/public/images/icon-next.svg");
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 20px;
+}
+
 .closebutton {
   background-image: url("/public/images/icon-close.svg");
   background-repeat: no-repeat;

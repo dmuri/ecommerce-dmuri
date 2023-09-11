@@ -89,7 +89,7 @@ const ProductGallery: React.FC = () => {
           <></>
         )}
         <div id="product-gallery">
-          <div id="big-image-container">
+          <div className="big-image-container">
             <div
               className="big-image-slider"
               ref={sliderRef}

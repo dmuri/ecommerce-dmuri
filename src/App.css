@@ -8,18 +8,23 @@ body {
   gap: 8rem;
 }
 
+.product-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
 @media (max-width: 1000px) {
   .product-grid-container {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-}
-
-.product-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
+  .product-text {
+    margin-top: 0rem;
+    gap: 1.5rem;
+  }
 }
 
 .product-text__company {
@@ -164,15 +169,15 @@ body {
   align-items: center;
 }
 
-#big-image-container {
+.big-image-container {
   position: relative;
   margin: auto;
   overflow: hidden;
   width: 100%;
 }
 @media (max-width: 800px) {
-  #big-image-container::before,
-  #big-image-container::after {
+  .big-image-container::before,
+  .big-image-container::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -186,7 +191,7 @@ body {
     cursor: pointer;
     pointer-events: none;
   }
-  #big-image-container::before {
+  .big-image-container::before {
     background-image: url("/public/images/icon-previous.svg");
     /* background-size: contain; */
     background-repeat: no-repeat;
@@ -194,7 +199,7 @@ body {
     left: 20px;
   }
 
-  #big-image-container::after {
+  .big-image-container::after {
     background-image: url("/public/images/icon-next.svg");
     /* background-size: contain; */
     background-repeat: no-repeat;
@@ -207,6 +212,7 @@ body {
   display: flex;
   transition: transform 0.2s ease-in-out;
 }
+
 .big-image {
   display: inline-block;
   flex-shrink: 0;
@@ -244,14 +250,10 @@ body {
   transform: scale(1.1);
 }
 
-.fs-900 {
-  font-size: var(--fs-900);
+.hidden {
+  display: none;
 }
 
-.color-red {
-  color: red;
-}
-
-.color {
-  color: blue;
+.flex {
+  display: flex;
 }

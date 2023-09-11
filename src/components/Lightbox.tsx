@@ -72,9 +72,9 @@ const Lightbox: React.FC<LightboxProps> = ({ handleLightboxCloseClick }) => {
             onClick={handleLightboxCloseClick}
           ></div>
           <div id="product-gallery">
-            <div id="big-image-container">
+            <div className={`big-image-container ${styles.lbimageslider}`}>
               <div
-                className="big-image-slider"
+                className={"big-image-slider"}
                 ref={sliderRef}
                 onClick={handleMouseStart}
               >
