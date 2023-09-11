@@ -9,7 +9,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ cartItems, onDeleteCartClick }) => {
-  const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
