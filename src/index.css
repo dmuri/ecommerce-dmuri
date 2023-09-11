@@ -1,0 +1,164 @@
+:root {
+  --fs-300: 0.8125rem;
+  --fs-400: 1rem;
+  --fs-700: 1.75rem;
+  --fs-900: 2.75rem;
+
+  /* Primary Colors */
+  --clr-orange: hsl(26, 100%, 55%);
+  --clr-pale-orange: hsl(25, 100%, 94%);
+
+  /* Neutral Colors */
+  --clr-black-opacity-75: rgba(0, 0, 0, 0.75);
+  --clr-very-dark-blue: hsl(220, 13%, 13%);
+  --clr-dark-grayish-blue: hsl(220, 9%, 45%);
+  --clr-grayish-blue: hsl(220, 14%, 75%);
+  --clr-light-grayish-blue: hsl(223, 59%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture,
+ul,
+li {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Makes the link use the color of its parent */
+  outline: none; /* Removes the outline that shows up on focus, but be careful with accessibility issues */
+}
+
+/* To also remove hover, active, and visited styles: */
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  appearance: none;
+  -webkit-appearance: none; /* Necessary to remove default styling in some browsers like Safari */
+  -moz-appearance: none; /* Necessary to remove default styling in Firefox */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(2rem, 1fr) minmax(0, 35rem) minmax(2rem, 1fr);
+  grid-template-rows: min(5.6rem, 1vw) min-content min(6.6rem, 3vw) 1fr min(
+      5.6rem,
+      6vw
+    );
+  gap: 1rem;
+}
+
+#root > :first-child {
+  grid-column: 2;
+}
+
+#root > :last-child {
+  grid-column: 2;
+}
+
+#root > :first-child {
+  grid-row: 2;
+}
+
+#root > :last-child {
+  grid-row: 4;
+}
+@media (min-width: 1000px) {
+  #root {
+    grid-template-rows: min(5.6rem, 1vw) min-content min(6.6rem, 1vw) 1fr min(
+        5.6rem,
+        6vw
+      );
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 70rem) minmax(2rem, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    grid-template-rows: min(5.6rem, 1vw) min-content 1fr min(5.6rem, 6vw);
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 5px;
+  }
+
+  #root > :last-child {
+    grid-row: 3;
+  }
+}

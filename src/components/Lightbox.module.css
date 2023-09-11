@@ -1,0 +1,43 @@
+.lightboxcontainer {
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 30%;
+  right: 30%;
+  /* inset: 8% 28% 8% 28%; */
+  /* opacity: 0.9; */
+  z-index: 250;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 200;
+}
+
+.productgallery {
+  z-index: 100;
+  max-width: 35rem;
+  color: white;
+  position: relative;
+}
+
+.closebutton {
+  background-image: url("/public/images/icon-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  z-index: 1000;
+  position: absolute;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  top: -80px;
+  right: 0;
+}
